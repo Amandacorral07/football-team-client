@@ -6,7 +6,13 @@ const messages = {
 	signOutSuccess: 'Come back soon!',
 	changePasswordSuccess: 'Password changed successfully!',
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
-	getTeamsFailure: 'Error fetching teams.'
+	getTeamsFailure: 'Error fetching teams.',
+	createTeamSuccess: 'Team created Successfully!',
+	createTeamFailure: 'Something went wrong, please try again.',
+	updateTeamSuccess: 'Team updated Successfully!',
+	updateTeamFailure: 'Couldnt update team, please try again.',
+	removeTeamSuccess: 'Team has been set free!',
+	removeTeamFailure: 'Couldnt remove team, please try again.'
 }
 
 module.exports = messages

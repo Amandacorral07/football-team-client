@@ -1,7 +1,4 @@
-import { 
-    Form,
-    Button, 
-} from 'react-bootstrap'
+import { Form,Button } from 'react-bootstrap'
 
 const TeamForm = (props) => {
     const { team, handleChange } = props
@@ -33,11 +30,14 @@ const TeamForm = (props) => {
                 value={ team.numberOfWins }
                 onChange={ handleChange }
             />
-            <Form.Check
-                label="How many losses?"
-                name="losses"
-                defaultChecked={ team.numberOfLosses  }
-                onChange={ handleChange }
+            <Form.Label htmlFor="losses">Number of Losses</Form.Label>
+            <Form.Control
+               placeholder="How many losses?"
+               type="number"
+               name="loss"
+               id="loss"
+               value={ team.numberOfLosses }
+               onChange={ handleChange }
             />
             <Button type="submit">Submit</Button>
         </Form>

@@ -13,7 +13,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowTeam from './components/teams/ShowTeam'
-import TeamForm from './components/shared/Teamform'
+import CreateTeam from './components/teams/CreateTeam'
 
 const App = () => {
 
@@ -72,13 +72,13 @@ const App = () => {
 				/>
 				<Route
 					path="/teams/:id"
-					element={ <ShowTeam msgAlert={ msgAlert } />}
+					element={ <ShowTeam user={ user } msgAlert={ msgAlert } />}
 				/>
 				<Route
 					path="/addTeam"
 					element={
 						<RequireAuth user={ user }>
-							<TeamForm />
+							<CreateTeam msgAlert={msgAlert} user={user}/>
 						</RequireAuth>  
 					}
 				/>
