@@ -1,10 +1,10 @@
 import { Form,Button } from 'react-bootstrap'
 
 const TeamForm = (props) => {
-    const { team, handleChange } = props
+    const { team, handleChange, handleSubmit, heading } = props
 
     return (
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <Form.Label htmlFor="name">Name</Form.Label>
             <Form.Control
                 placeholder="What is your team's name?"
@@ -25,8 +25,8 @@ const TeamForm = (props) => {
             <Form.Control
                 placeholder="How many wins?"
                 type="number"
-                name="win"
-                id="win"
+                name="numberOfWins"
+                id="numberOfWins"
                 value={ team.numberOfWins }
                 onChange={ handleChange }
             />
@@ -34,8 +34,8 @@ const TeamForm = (props) => {
             <Form.Control
                placeholder="How many losses?"
                type="number"
-               name="loss"
-               id="loss"
+               name="numberOfLosses"
+               id="numberOfLosses"
                value={ team.numberOfLosses }
                onChange={ handleChange }
             />

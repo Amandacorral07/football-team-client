@@ -93,8 +93,34 @@ const ShowTeam = (props) => {
                             <div><small>Number Of Losses: { team.numberOfLosses }</small></div>
                         </Card.Text>
                     </Card.Body>
+                    <Card.Footer>
+                        {
+                             user && team.owner === user._id
+                            ?
+                            <>
+                                <Button onClick={()=> setEditModalShow(true)} className="m-2" variant="warning">
+                                    Edit Team
+                                </Button>
+                                <Button onClick={()=> removeTheTeam(true)} className="m-2" variant="danger">
+                                    Remove {team.name}
+                                </Button>
+                            </>
+                            :
+                            null
+                        }
+                    </Card.Footer>
                 </Card>
             </Container>
+            <EditTeamModal 
+                user={user}
+                team={team}
+                show={editModalShow}
+                updateTeam={updateTeam}
+                msgAlert={msgAlert}
+                triggerRefresh={() => setUpdated(prev => !prev)}
+                handleClose={() => setEditModalShow(false)}
+            />
+
         </>
     )
 }

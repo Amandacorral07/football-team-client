@@ -25,13 +25,6 @@ const EditTeamModal = (props) => {
                 updatedValue = parseInt(e.target.value)
             }
 
-            // this handles the checkbox, changing on to true etc
-            if (updatedName === "adoptable" && e.target.checked) {
-                updatedValue = true
-            } else if (updatedName === "adoptable" && !e.target.checked) {
-                updatedValue = false
-            }
-
             const updatedTeam = {
                 [updatedName]: updatedValue
             }
